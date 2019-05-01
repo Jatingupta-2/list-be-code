@@ -1,0 +1,49 @@
+<div class="body">
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+
+        <a class="navbar-brand" href="/friends">To Do List</a>
+    
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+    
+          <span class="navbar-toggler-icon"></span>
+    
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    
+          <ul class="navbar-nav ml-auto">
+    
+            <span class="nav-item">
+              <a class="nav-link" (click)="changePass()" style="color: rgb(236, 243, 140)">Change Password</a>
+            </span>
+    
+            <span class="nav-item">
+              <a class="nav-link" (click)="logout()">Logout</a>
+            </span>
+    
+          </ul>
+    
+        </div>
+    
+      </nav>
+
+
+
+
+    <br><br><br><br>
+  <div class=container2>
+<div class="row">
+  <div class="col-4" style="text-align: center;"><button class="btn btn-outline-dark" (click)="addList()">Add list</button></div>
+  <div class="col-4" style="text-align: center">
+
+    <div *ngFor="let list of lists">
+      <button class="btn btn-outline-dark" [routerLink]="['/userslist',list.listId]">{{list.listName}}</button>
+      
+    </div>
+  </div>
+  <div class="col-4"></div>
+</div>
+</div>
+</div>

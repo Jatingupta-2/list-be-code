@@ -1,0 +1,106 @@
+
+<div class="body">
+<div class="contanier">
+
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+
+        <a class="navbar-brand" href="/friends">To Do List</a>
+    
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+    
+          <span class="navbar-toggler-icon"></span>
+    
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    
+          <ul class="navbar-nav ml-auto">
+    
+            <span class="nav-item">
+              <a class="nav-link" (click)="changePass()" style="color: rgb(236, 243, 140)">Change Password</a>
+            </span>
+    
+            <span class="nav-item">
+              <a class="nav-link" (click)="logout()" style="color: rgb(241, 171, 183)">Logout</a>
+            </span>
+    
+          </ul>
+    
+        </div>
+    
+      </nav>
+
+
+<br><br>
+
+  <div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+
+      
+      <!-- <ul>
+        <li><input type="text">{{item.name}}</li>
+        <li><input type="text">{{item.name}}</li> -->
+
+      <!-- </ul> -->
+    </div>
+    <div class="col-4"></div>
+  </div>
+  <div class="row">
+    <div class="col-lg-3 col-md-2 col-centered"><br><br><br><br><br><br><h2><button class="btn btn-primary" (click)="addItem()">Add Item</button></h2></div>
+    <div class="col-lg-6 col-md-8">
+
+      <div style="text-align:center">
+        <!-- <h2 style="font-family: cursive; color: brown">{{listName}}</h2> -->
+        
+        <input [(ngModel)]="listName" placeholder="item" class="c1 ibody" style="text-align: center;font-size:30px">
+      </div>
+<hr>
+<div *ngIf="list">
+      <div *ngFor="let item of list;let i = index" >
+        <ul>
+        
+          
+          <i class="fa fa-square  color:red">&nbsp;&nbsp;&nbsp;&nbsp;<input [(ngModel)]="list[i].name" placeholder="item" [ngClass]="{c1: item.open == true,open: item.open == false}">
+        <div *ngIf="item.subitems.length>0">
+          <ul>
+            <div *ngFor="let subitem of item.subitems;let i = index">
+              <li>
+                <input [(ngModel)]="item.subitems[i]" placeholder="Sub Item" [ngClass]="{'c1': item.open == true,'open': item.open == false}">
+              </li>
+            </div>
+          </ul>
+        </div>
+
+      </i>
+        
+      
+      <br>
+          <input [ngModel]="item._id" #change hidden>
+          
+          <div *ngIf="item.open==true"><button class="btn btn-primary" (click)="updateopendone(change.value)">Click to mark Done</button>&nbsp;<button class="btn btn-info" (click)="addSubItem(change.value)">Add Sub Item</button>&nbsp;<button class="btn btn-danger" (click)="deleteItem(change.value)" ><i class="fa fa-trash" ></i>&nbsp;Delete Item</button></div>
+
+          <div *ngIf="item.open==false"><button class="btn btn-primary" (click)="updateopendone(change.value)">Click to mark Open</button>&nbsp;<button class="btn btn-info" (click)="addSubItem(change.value)">Add Sub Item</button>&nbsp;<button class="btn btn-danger" (click)="deleteItem(change.value)"> <i class="fa fa-trash" ></i>&nbsp;Delete Item</button></div>
+          
+      </ul>
+      
+      </div>
+    </div>
+      
+    </div>
+    <div class="col-lg-3 col-md-2 col-centered"><br><br><br><br><br><br><h6>*Please save changes after making any changes, deleting, adding sub item</h6></div>
+  </div>
+  <div class="row">
+      <div class="col-12 col-centered">
+      <button type="button" class="btn btn-outline-success" style="width: 250px;font-size: 20px; font-weight: bolder" (click)="edit()"><i class="fa fa-save"></i>Save </button>&nbsp;&nbsp;&nbsp;
+      <button type="button" class="btn btn-outline-danger" style="width: 250px;font-size: 20px; font-weight: bolder" (click)="undo()"><i class="fa fa-rotate-left"></i>Undo </button>
+      </div>
+      </div>
+
+      
+  
+</div>
+
+</div>

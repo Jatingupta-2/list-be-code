@@ -1,0 +1,40 @@
+:root{
+    font-size: 16px;
+   }
+   
+   .body{
+    background-image:linear-gradient(to top left,
+    #ffeeee
+    ,
+    #cffcf9);
+    height: 100vh;
+    font-family: cursive;
+   }
+   
+   .container{
+       display: flex;
+       flex-wrap: wrap;
+       
+   }
+   .container12{
+    
+    width: 100vw;
+    height:20vh;
+    
+}
+   
+   .container1{
+       background:rgb(42, 42, 243);
+       width: 100%;
+       height:100vh;
+       font-family: 'Poor Story', cursive;
+       text-align: center;
+       font-size: 2rem;
+       background-color: red; /* For browsers that do not support gradients  #f2709c
+       → 
+       #ff9472*/
+  background-image: linear-gradient(to top left,
+   #f7719e, #f3a58d); 
+   }
+   
+  

@@ -1,0 +1,18 @@
+.a1{
+    color: red;
+    font-size: 200px;
+}
+
+.a2{
+    color: red;
+    font-size: 40px;
+}
+
+h1{
+    background-image:linear-gradient(to top left,
+    #ffeeee
+    ,
+    #cffcf9);
+    height: 100vh;
+    font-family: cursive;
+}
